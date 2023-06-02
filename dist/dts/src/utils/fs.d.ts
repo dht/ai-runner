@@ -1,0 +1,12 @@
+export declare const validateConfig: () => Promise<void>;
+export declare const getConfig: () => any;
+export declare const patchConfig: (change: Json) => void;
+export declare const getEnv: () => any;
+export declare const patchEnv: (change: Json) => void;
+export declare const readJsonFile: (filePath: string) => any;
+export declare const writeJsonFile: (filePath: string, json: Json) => void;
+export declare const patchJsonFile: (filePath: string, change: Json) => void;
+export declare const deleteJsonFile: (filePath: string) => void;
+export declare const existsJsonFile: (filePath: string) => boolean;
+declare type Json = Record<string, any>;
+export {};
