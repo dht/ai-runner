@@ -1,0 +1,7 @@
+node_modules
+output/
+curl
+serviceAccountKey.json
+_temp/
+.env
+boards/

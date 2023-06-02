@@ -1,0 +1,22 @@
+import { IConversationDefinition } from './types';
+import { IConversationTranscript, IInstructions } from '../../_archive/types';
+export declare const init: (apiKey: string, organization?: string | undefined) => void;
+export declare const whisper: (stream: any) => Promise<import("openai").CreateTranscriptionResponse | undefined>;
+export declare const completion: (prompt: string) => Promise<import("openai").CreateCompletionResponse | undefined>;
+export declare const chatCompletion: (messages: any[], model?: string) => Promise<import("openai").CreateChatCompletionResponse | undefined>;
+export declare const makeConversation: (definition: IConversationDefinition) => Promise<import("openai").CreateChatCompletionResponse | undefined>;
+export declare const phonetics: (sentence: string) => Promise<string>;
+export declare const followInstructions: (instructions: IInstructions) => Promise<string>;
+export declare const phoneticsTranscript: (transcript: IConversationTranscript) => Promise<{
+    textPhonetics: string;
+    id: string;
+    text: string;
+    speakerName: string;
+    voice?: import("../../_archive/types").IVoice | undefined;
+    audioUrl?: string | undefined;
+}[]>;
+export declare const listModels: () => Promise<import("openai").ListModelsResponse | undefined>;
+export declare const question: (q: string) => Promise<string>;
+export declare const improveConversation: (transcript: string, instructions: string) => Promise<string>;
+export declare const parseResponse: (response: any) => string;
+export declare const batch: (inputs: any[], method: any) => Promise<any[]>;
